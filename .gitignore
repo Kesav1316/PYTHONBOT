@@ -1,2 +1,2 @@
-Details.txt
-token.txt
+#To ignore txt files
+*.txt
