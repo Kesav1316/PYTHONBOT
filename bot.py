@@ -19,7 +19,7 @@ async def pong(ctx):
 async def any(ctx , * , question): # * - space ; question - anything can be done
     await ctx.send("ok")'''
 
-with open("E:\\BOT\\PYTHON BOT\\token.txt") as f:
+with open("E:\\BOT\\PYTHONBOT\\token.txt") as f:
     TOKEN = f.readline()
 
 client.run(TOKEN)
