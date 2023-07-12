@@ -30,10 +30,18 @@ def run_discord_bot():
             return
 
         username = str(message.author) # Retrieves the author from the message
-        user_message = str(message.content) # Retrieves the content from the message
+        user_message = str(message.content) # The command given by user
         channel = str(message.channel) #Retrieves the channel from the message
 
         print("{} said '{}' ({})".format(username , user_message , channel))
+
+        # Setting prefix
+        if user_message[0] == "?": #Sets prefix as "?"
+            user_message = user_message[1:] # The message without prefix
+            await send_message(message , user_message , is_private = True) # Here the variable message is the output given by bot and will be sent to the users DM
+        else:
+            await send_message(message , user_message , is_private = False) # Sends message in channel
+
 
 '''@client.command()   #To send in server
 async def ping(ctx):
