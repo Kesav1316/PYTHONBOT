@@ -24,6 +24,15 @@ def run_discord_bot():
 
     client.run(TOKEN)
 
+    @client.event
+    async def on_message(message):
+        if message.author == client.user:
+            return
+
+        username = str(message.author) # Retrieves the author from the message
+        user_message = str(message.content) # Retrieves the content from the message
+        channel = str(message.channel) #Retrieves the channel from the message
+
 '''@client.command()   #To send in server
 async def ping(ctx):
     await ctx.send("Pong") 
