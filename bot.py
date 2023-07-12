@@ -33,6 +33,8 @@ def run_discord_bot():
         user_message = str(message.content) # Retrieves the content from the message
         channel = str(message.channel) #Retrieves the channel from the message
 
+        print("{} said '{}' ({})".format(username , user_message , channel))
+
 '''@client.command()   #To send in server
 async def ping(ctx):
     await ctx.send("Pong") 
