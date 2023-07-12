@@ -7,23 +7,17 @@ client = discord.Client(intents = intents)
 
 async def send_message(message, user_message, is_private):
     try:
-        response = responses.handle.handle_response(user_message)
+        response = responses.handle_response(user_message)
         await message.author.send(response) if is_private else await message.channel.send(response)
 
     except Exception as e:
         print(e)
 
 def run_discord_bot():
-    with open("E:\\BOT\\PYTHONBOT\\token.txt") as f:
-        TOKEN = f.readline()
-    client = discord.Client(intents=intents)
-
     @client.event
     async def on_ready():
         print(f'{client.user} is now running!')
-
-    client.run(TOKEN)
-
+    
     @client.event
     async def on_message(message):
         if message.author == client.user:
@@ -41,7 +35,9 @@ def run_discord_bot():
             await send_message(message , user_message , is_private = True) # Here the variable message is the output given by bot and will be sent to the users DM
         else:
             await send_message(message , user_message , is_private = False) # Sends message in channel
-
+    with open("E:\\BOT\\PYTHONBOT\\token.txt") as f:
+        TOKEN = f.readline()
+    client.run(TOKEN)
 
 '''@client.command()   #To send in server
 async def ping(ctx):
