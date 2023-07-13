@@ -38,7 +38,8 @@ def run_discord_bot():
         if user_message[0] == "?":                                          # Sets prefix as "?".
             user_message = user_message[1:]                                 # The message without prefix using slicing.
             await send_message(message , user_message , is_private = True)  # Here the variable message given by bot will be sent to author DM.
-        else:
+        elif user_message[0] =="!":
+            user_message = user_message[1:]
             await send_message(message , user_message , is_private = False) # Here the variable message given by bot will be sent in channel.
    
     #Running using token
