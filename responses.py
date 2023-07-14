@@ -1,10 +1,10 @@
+from bot import username
 import random
 
 def handle_response(message) -> str:
     p_message = message.lower()
-    username = str(message.author)
-    '''if p_message == "name":
-        return username  '''
+    if p_message == "name":
+        return username
 
     if p_message == "hello":
         return "Hey there!"
