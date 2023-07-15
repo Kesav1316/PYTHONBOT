@@ -16,9 +16,9 @@ def handle_response(message) -> str:
     if p_message == "help":
         return "This is a bot used to perform basic python operations \n Use '?' as prefix to send the output in your DM \n Use '!' as prefix to send the output in the channel"
     
-'''    if p_message == "react":
+    if p_message == "react":
         x = print("test")
         emoji = "\N{THUMBS UP SIGN}"
-        return x.add_reaction("\:thumbsup:")'''
+        return x.add_reaction("\:thumbsup:")
     
     
