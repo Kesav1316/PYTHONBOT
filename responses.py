@@ -21,6 +21,6 @@ def handle_response(message) -> str:
     #Reading username from a file
     if p_message == "name":
         with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt") as f:
-            a = f.read()
-            return a
+            s = f.read()
+            return s
     

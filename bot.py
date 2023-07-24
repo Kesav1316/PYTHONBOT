@@ -35,8 +35,8 @@ def run_discord_bot():
         print("{} said '{}' ({})".format(username , user_message , channel))
         
         #Writing the name of user in a file 
-        with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt" , "w") as f:
-            f.write(username)
+        with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt" , "w") as f: 
+            f.write(username) 
         
         # Setting prefix
         if user_message[0] == "?":                                          # Sets prefix as "?".
