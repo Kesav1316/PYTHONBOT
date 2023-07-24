@@ -1,15 +1,12 @@
-from bot import username
 import random
 
 def handle_response(message) -> str:
     p_message = message.lower()
-    if p_message == "name":
-        return username
 
     if p_message == "hello":
         return "Hey there!"
-    
-    
+
+
     if p_message == "roll":
         return str(random.randint(1,6))
     
@@ -21,4 +18,9 @@ def handle_response(message) -> str:
         emoji = "\N{THUMBS UP SIGN}"
         return x.add_reaction("\:thumbsup:")
     
+    #Reading username from a file
+    if p_message == "name":
+        with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt") as f:
+            a = f.read()
+            return a
     

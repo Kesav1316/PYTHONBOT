@@ -28,12 +28,16 @@ def run_discord_bot():
         if message.author == client.user:       # Prevents looping of bot messages when output is set the same as input.
             return
 
+        #Assigning details of user to a variable
         username = str(message.author)      # Retrieves the author from the message.
         user_message = str(message.content) # The command given by user.
         channel = str(message.channel)      # Retrieves the channel from the message.
-
         print("{} said '{}' ({})".format(username , user_message , channel))
-
+        
+        #Writing the name of user in a file 
+        with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt" , "w") as f:
+            f.write(username)
+        
         # Setting prefix
         if user_message[0] == "?":                                          # Sets prefix as "?".
             user_message = user_message[1:]                                 # The message without prefix using slicing.
@@ -43,9 +47,14 @@ def run_discord_bot():
             await send_message(message , user_message , is_private = False) # Here the variable message given by bot will be sent in channel.
    
     #Running using token
-    with open("E:\\BOT\\PYTHONBOT\\token.txt") as f:  # Opening the file token.txt in read.
-        TOKEN = f.readline()                          # Stores the first line from the file token.txt in the form of string.
+
+        
+
+    
+    with open("E:\\BOT\\PYTHONBOT\\token.txt") as f1:  # Opening the file token.txt in read.
+        TOKEN = f1.readline()                          # Stores the first line from the file token.txt in the form of string.
     client.run(TOKEN)
+
 
 '''@client.command()   #To send in server
 async def ping(ctx):
