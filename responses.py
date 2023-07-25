@@ -24,3 +24,8 @@ def handle_response(message) -> str:
             s = f.read()
             return s
     
+    if p_message == "url":
+        with open("E:\\BOT\\PYTHONBOT\\url.txt") as f1:
+            z = f1.read()
+            return z
+    

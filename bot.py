@@ -38,6 +38,11 @@ def run_discord_bot():
         with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt" , "w") as f: 
             f.write(username) 
         
+        #Sending player pfp
+        with open("E:\\BOT\\PYTHONBOT\\url.txt" , "w") as f1:
+            url = message.author.avatar.url 
+            f1.write(url)
+        
         # Setting prefix
         if user_message[0] == "?":                                          # Sets prefix as "?".
             user_message = user_message[1:]                                 # The message without prefix using slicing.
