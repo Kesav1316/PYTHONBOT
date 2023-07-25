@@ -27,5 +27,9 @@ def handle_response(message) -> str:
     if p_message == "url":
         with open("E:\\BOT\\PYTHONBOT\\url.txt") as f1:
             z = f1.read()
-            return z
+            x = z.split("=") # Returns a list with strings seperated by seperator
+            size_128 = x 
+            size_128[1] = "128" # Changes the size to 128
+            size_128 = size_128[0] + size_128[1] # Converts the list of strings into a string 
+            return size_128
     

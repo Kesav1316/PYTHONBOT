@@ -40,9 +40,9 @@ def run_discord_bot():
         
         #Sending player pfp
         with open("E:\\BOT\\PYTHONBOT\\url.txt" , "w") as f1:
-            url = message.author.avatar.url 
+            url = message.author.avatar.url  # Here url = "https://cdn.discordapp.com/avatars/580355433257107458/41a10abb44bf518433b60c917cfee6e2.png?size=1024" where the number is user id
             f1.write(url)
-        
+    
         # Setting prefix
         if user_message[0] == "?":                                          # Sets prefix as "?".
             user_message = user_message[1:]                                 # The message without prefix using slicing.
