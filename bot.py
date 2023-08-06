@@ -77,5 +77,3 @@ with open("E:\\BOT\\PYTHONBOT\\token.txt") as f:
     TOKEN = f.readline()
 
 client.run(TOKEN)'''
-
-"test"
