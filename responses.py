@@ -1,10 +1,11 @@
+import discord
 import random
 
 def handle_response(message) -> str:
     p_message = message.lower()
 
-    if p_message == "hello":
-        return "Hey there!"
+    '''if p_message == "ehello":
+        return "Hey there!"'''
 
 
     if p_message == "roll":
@@ -19,13 +20,13 @@ def handle_response(message) -> str:
         return x.add_reaction("\:thumbsup:")
     
     # Reading username from a file
-    if p_message == "name":
+    '''if p_message == "name":
         with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt") as f:
             s = f.read()
-            return s
+            return s'''
     
     # To print avatar url of user
-    if p_message.startswith("url"):
+    '''if p_message.startswith("url"):
         with open("E:\\BOT\\PYTHONBOT\\url.txt") as f1:
             z = f1.read()
             x = z.split("=") # Returns a list with strings seperated by seperator
@@ -49,4 +50,8 @@ def handle_response(message) -> str:
             
             else:
                 return z
-    
+            
+         if p_message == "idkigspfmig":
+        with open("E:\\BOT\\PYTHONBOT\\embed.txt") as f2:
+            x = f2.read()
+            return x'''

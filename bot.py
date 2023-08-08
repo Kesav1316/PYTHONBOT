@@ -32,7 +32,7 @@ def run_discord_bot():
         username = str(message.author)      # Retrieves the author from the message.
         user_message = str(message.content) # The command given by user.
         channel = str(message.channel)      # Retrieves the channel from the message.
-        print("{} said '{}' ({})".format(username , user_message , channel))
+        print("{} said '{}' ({})".format(username , user_message , channel)) # Prints the information in terminal
         
         #Writing the name of user in a file 
         with open("E:\\BOT\\PYTHONBOT\\idkigspfmig.txt" , "w") as f: 
@@ -42,7 +42,16 @@ def run_discord_bot():
         with open("E:\\BOT\\PYTHONBOT\\url.txt" , "w") as f1:
             url = message.author.avatar.url  # Here url = "https://cdn.discordapp.com/avatars/580355433257107458/41a10abb44bf518433b60c917cfee6e2.png?size=1024" where the number is user id
             f1.write(url)
-    
+
+        '''with open("E:\\BOT\\PYTHONBOT\\embed.txt" , "w") as f2:
+            if message.content.startswith('!hello'):
+                embedVar = discord.Embed(title="Title", description="Desc", color=0x00ff00)
+                embedVar.add_field(name="Field1", value="hi", inline=False)
+                embedVar.add_field(name="Field2", value="hi2", inline=False)
+                await message.channel.send(embed=embedVar)
+                f2.write(embedVar)'''
+        
+
         # Setting prefix
         if user_message[0] == "?":                                          # Sets prefix as "?".
             user_message = user_message[1:]                                 # The message without prefix using slicing.
@@ -50,12 +59,51 @@ def run_discord_bot():
         elif user_message[0] =="!":
             user_message = user_message[1:]
             await send_message(message , user_message , is_private = False) # Here the variable message given by bot will be sent in channel.
-   
-    #Running using token
 
         
+        # Responses from main file
+        if user_message.startswith('hello'):
+            embedVar = discord.Embed(title="Title", description="Desc", color=0x00ff00)
+            embedVar.add_field(name="Field1", value="hi", inline=False)
+            embedVar.add_field(name="Field2", value="hi2", inline=False)
+            await message.channel.send(embed=embedVar)
 
-    
+        elif user_message.startswith("url"):
+            avatar = message.author.avatar.url
+            await message.channel.send(avatar)
+
+        elif user_message == "name":
+            await message.channel.send(username)
+
+        elif user_message == "react":
+            message = await message.channel.send("test")
+            emoji = '\N{THUMBS UP SIGN}'
+            await message.add_reaction(emoji)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   #Running using token
+
     with open("E:\\BOT\\PYTHONBOT\\token.txt") as f1:  # Opening the file token.txt in read.
         TOKEN = f1.readline()                          # Stores the first line from the file token.txt in the form of string.
     client.run(TOKEN)
