@@ -68,9 +68,29 @@ def run_discord_bot():
             embedVar.add_field(name="Field2", value="hi2", inline=False)
             await message.channel.send(embed=embedVar)
 
-        elif user_message.startswith("url"):
+        #To print avatar of user
+
+        if user_message.startswith("url"):
             avatar = message.author.avatar.url
             await message.channel.send(avatar)
+            x = avatar.split("=")
+            if user_message == "url_128":
+                size_128 = x 
+                size_128[1] = "128" # Changes the size to 128
+                size_128 = size_128[0] + size_128[1] # Converts the list of strings into a string 
+                await message.channel.send(size_128)
+            
+            elif user_message == "url_256":
+                size_256 = x 
+                size_256[1] = "256" # Changes the size to 128
+                size_256 = size_256[0] + size_256[1] # Converts the list of strings into a string 
+                await message.channel.send(size_256)
+            
+            elif user_message == "url_512":
+                size_512 = x 
+                size_512[1] = "512" # Changes the size to 128
+                size_512 = size_512[0] + size_512[1] # Converts the list of strings into a string 
+                await message.channel.send(size_512)
 
         elif user_message == "name":
             await message.channel.send(username)
